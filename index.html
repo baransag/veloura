@@ -185,7 +185,7 @@ footer{padding-block:32px 96px;color:var(--muted);font-size:.9rem;display:flex;j
   </div>
 
   <div class="strip">
-    <div><b>Sari delivery advance</b><span>Order confirm hone par advance payment</span></div>
+    <div><b>Sari delivery advance</b><span>Payment JazzCash par</span></div>
     <div><b>Order on WhatsApp</b><span>Details seedha chat mein</span></div>
     <div><b>7 makeup deals</b><span>Sab Rs 750 mein</span></div>
   </div>
@@ -252,7 +252,7 @@ footer{padding-block:32px 96px;color:var(--muted);font-size:.9rem;display:flex;j
         <div class="eyebrow" style="color:var(--soft)">Order</div>
         <h2>Order seedha WhatsApp par</h2>
         <p style="opacity:.85">Apni details bharein. Button dabate hi poora order Veloura ke WhatsApp par khul jayega.</p>
-        <div class="note"><b>Advance delivery:</b> sari delivery advance payment par hoti hai. Payment ka tareeqa WhatsApp par bataya jayega.</div>
+        <div class="note"><b>Advance delivery:</b> sari delivery advance payment par hoti hai.<br><b>Payment method: JazzCash</b><br><button class="numcopy" id="copyJc" type="button" style="color:var(--ink);margin-top:6px">0321 9954325</button><br><span style="opacity:.85">Payment karke screenshot WhatsApp par bhej dein.</span></div>
         <div class="lines" id="lines"></div>
         <div class="total" id="totalRow" hidden><span>Total (items)</span><span id="total"></span></div>
       </div>
@@ -275,7 +275,7 @@ footer{padding-block:32px 96px;color:var(--muted);font-size:.9rem;display:flex;j
 
   <footer>
     <div><b style="font-family:var(--display);font-size:1.2rem;color:var(--ink)">Veloura</b><br>Makeup &amp; skincare deals</div>
-    <div>WhatsApp: <button class="numcopy" id="copyNum" type="button">+92 321 9954325</button></div>
+    <div>WhatsApp &amp; JazzCash: <button class="numcopy" id="copyNum" type="button">+92 321 9954325</button></div>
   </footer>
 </main>
 
@@ -338,7 +338,7 @@ function msg(){
     if(it.price === null){ unpriced = true; L.push('• '+it.name+' x'+q+' (price confirm karein)'); }
     else { total += it.price*q; L.push('• '+it.name+' x'+q+' = '+money(it.price*q)); }
   });
-  L.push('', '*Total:* '+money(total)+(unpriced?' + lip gloss':''), '*Delivery:* Advance payment', '');
+  L.push('', '*Total:* '+money(total)+(unpriced?' + lip gloss':''), '*Delivery:* Advance payment', '*Payment:* JazzCash (0321 9954325)', '');
   L.push('*Naam:* '+v('nm'), '*Phone:* '+v('ph'), '*Shehar:* '+v('ct'), '*Address:* '+v('ad'));
   if(v('nt')) L.push('*Note:* '+v('nt'));
   return L.join('\n');
@@ -377,6 +377,10 @@ document.getElementById('sendBtn').addEventListener('click', function(e){
 document.getElementById('copyNum').addEventListener('click', function(){
   var b = this;
   try{ navigator.clipboard.writeText('+923219954325').then(function(){ b.textContent='Copied ✓'; setTimeout(function(){b.textContent='+92 321 9954325'},1200); }, function(){}); }catch(x){}
+});
+document.getElementById('copyJc').addEventListener('click', function(){
+  var b = this;
+  try{ navigator.clipboard.writeText('03219954325').then(function(){ b.textContent='Copied ✓'; setTimeout(function(){b.textContent='0321 9954325'},1200); }, function(){}); }catch(x){}
 });
 render();
 </script>
